@@ -1,9 +1,9 @@
 import time
 
+import config
 from nonebot import on_command, CommandSession, MessageSegment
-import random, config
+import random
 import re
-import xiaoshimei.plugins.goldsystem.gold as gold
 
 modules_image = {
     'weapon': ("武器", "武器属性", "武器介绍"),
@@ -51,7 +51,7 @@ def image_command(name, aliases0, url, *, only=False):
 
 
 for item in modules_image:
-    image_command(f"{item}", modules_image[item], f"C:/resources/{item}.png")
+    image_command(f"{item}", modules_image[item], f"./resources/{item}.png")
 
 for item in modules_text:
     text_command(item, modules_text[item][0], modules_text[item][1])
@@ -59,13 +59,13 @@ for item in modules_text:
 
 @on_command("petgrow", aliases=("宠物属性", "宠物成长"), only_to_me=False)
 async def petgrow(session: CommandSession):
-    report = MessageSegment.image("C:/resources/petgrow.png") + MessageSegment.image("C:/resources/petstatus2.png")
+    report = MessageSegment.image("./resources/petgrow.png") + MessageSegment.image("./resources/petstatus2.png")
     await session.send(report)
 
 
 @on_command("jinglian", aliases=("精炼",), only_to_me=False)
 async def jinglian(session: CommandSession):
-    report = MessageSegment.image("C:/resources/jinglian.png")
+    report = MessageSegment.image("./resources/jinglian.png")
 
     await session.send(report)
     await session.send("额外补充：4个恢复圣石1级精炼可能出S1宝珠，包括S1伤害")
@@ -88,27 +88,18 @@ async def randomdice(session: CommandSession):
             report = "请输入：\n 1.掷骰 数字 或 随机数 数字,例如：随机数 16\n 2.掷骰 下限-上限或 随机数 下限-上限，例如：掷骰 1-10"
     await session.send(report)
 
-
-@on_command("award", aliases=("周贡抽奖", "抽奖"), only_to_me=False, permission=lambda sender: sender.is_superuser)
-async def award(session: CommandSession):
-    pass
-
-
 @on_command("version", only_to_me=False)
 async def version(session: CommandSession):
     await session.send(f"百花谷小师妹测试版Ver. {config.VERSION}")
 
 
-@on_command("help", aliases=("帮助", "指令表", "功能", "菜单"), only_to_me=False)
-async def jinglian(session: CommandSession):
+@on_command("#help", aliases=("帮助", "指令表", "功能", "菜单"), only_to_me=False)
+async def help(session: CommandSession):
     arg = session.current_arg.strip()
     if arg:
         return
-    report = MessageSegment.image("C:/resources/help.png")
+    report = MessageSegment.image("./resources/help.png")
     await session.send(report)
-    if not gold.get_permit_group(session.event.group_id):
-        report = MessageSegment.image("C:/resources/help2.png")
-        await session.send(report)
 
 
 def randomlist(list1: list):

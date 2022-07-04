@@ -174,6 +174,15 @@ def get_qq(cq_msg):
         return None
 
 
+@on_command("#help", aliases=("帮助", "指令表", "功能", "菜单"), only_to_me=False)
+async def help2(session: CommandSession):
+    group_id = session.event.group_id
+    permission0 = authority(group_id)
+    if sum(permission0):
+        report = MessageSegment.image("./resources/help.png")
+        await session.send(report)
+
+
 # user_package
 # uni_id  player_id  item_id  count  type
 
