@@ -1,0 +1,2 @@
+# xiaoshimei
+基于Nonebot2的弹弹堂经典服QQ聊天答疑机器人，加入了亿点点娱乐活动
