@@ -1,6 +1,6 @@
 # 百花谷小师妹机器人
 
-  基于 [nonebot2](https://v2.nonebot.dev/) 的QQ聊天机器人百花谷小师妹，主要用于 [弹弹堂经典服](https://ddt.wan.com) 的答疑功能以及一些其他的娱乐小游戏
+基于 [nonebot2](https://v2.nonebot.dev/) 的QQ聊天机器人百花谷小师妹，主要用于 [弹弹堂经典服](https://ddt.wan.com) 的答疑功能以及一些其他的娱乐小游戏
 
 ##功能
 
