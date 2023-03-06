@@ -12,6 +12,7 @@ from nonebot.permission import SUPERUSER, Permission
 from nonebot.params import State, Depends, CommandArg, Arg, ArgPlainText
 from nonebot.rule import to_me
 import pymysql
+import configparser
 
 SELECT = 0
 UPDATE = 1

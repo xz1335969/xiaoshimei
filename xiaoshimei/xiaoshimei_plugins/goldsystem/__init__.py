@@ -1,6 +1,5 @@
 from xiaoshimei.xiaoshimei_plugins.goldsystem.cls import *
-from . import createImage,superuser,legendbox,scheduler,simulate_fusion,extra,mine_sweep
-
+from . import createImage, superuser, legendbox, scheduler, simulate_fusion, extra, mine_sweep
 
 signin = on_command("signin", aliases={"每日签到", '签到'})
 gold_query = on_command("gold_query", aliases={"查询金币", "查金币"})
@@ -201,12 +200,3 @@ async def _(event: GroupMessageEvent):
         f"file:///{__file__.strip('__init__.py')}../temp/temp_bag.png") if result else MessageSegment.at(
         user_id) + "的仓库为空"
     await user_package.finish(report)
-
-
-
-
-
-
-
-
-
