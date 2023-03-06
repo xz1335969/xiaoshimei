@@ -1,12 +1,16 @@
-# xiaoshimei
+# 百花谷小师妹机器人
 
-## How to start
+  基于 [nonebot2](https://v2.nonebot.dev/) 的QQ聊天机器人百花谷小师妹，主要用于 [弹弹堂经典服](https://ddt.wan.com) 的答疑功能以及一些其他的娱乐小游戏
 
-1. generate project using `nb create` .
-2. create your plugin using `nb plugin create` .
-3. writing your plugins under `xiaoshimei/plugins` folder.
-4. run your bot using `nb run` .
+##功能
 
-## Documentation
+待编辑
 
-See [Docs](https://v2.nonebot.dev/)
+
+## 使用文档
+
+待编辑
+
+## 其他
+
+待编辑
